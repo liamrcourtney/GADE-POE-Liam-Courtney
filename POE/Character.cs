@@ -10,6 +10,9 @@ namespace POE
         int MaxHp;
         int Dmg;
         int weapon;
+        int CharDistance;
+        int CharTarget;
+        int Target;
         string Symbol;
 
         
@@ -39,9 +42,9 @@ namespace POE
 
         }
 
-        public virtual void Attack(/*CharacterTarget*/)
+        public virtual void Attack(CharacterTarget)
         {
-            /* CharacterTarget.  */
+            CharacterTarget.  
             Hp = Hp-Dmg;
         }
         
@@ -64,7 +67,7 @@ namespace POE
         }
         private int DistanceTo(/*Target*/)
         {
-           /*Target*/ 
+           /*Target*/ - Char
         }
 
     }
