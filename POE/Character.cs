@@ -2,18 +2,22 @@
 using System.Collections.Generic;
 using System.Text;
 
+
 namespace POE
 {
     class Character:Tile
     {
-        int Hp;
-        int MaxHp;
-        int Dmg;
-        int weapon;
-        int CharDistance;
-        int CharTarget;
-        int Target;
-        string Symbol;
+        public int Hp;
+        public int MaxHp;
+        public int Dmg;
+        public int weapon;
+        public int CharDistance;
+        public int Target;
+        public Tile CharTarg = new Tile();
+        public Character CharDis = new Character();
+        public double Distance;
+        public string Symbol;
+        
 
         
         Tile[] CharacterVision;
@@ -42,9 +46,9 @@ namespace POE
 
         }
 
-        public virtual void Attack(CharacterTarget)
+        public virtual void Attack(CharTarget)
         {
-            CharacterTarget.  
+             
             Hp = Hp-Dmg;
         }
         
@@ -56,18 +60,18 @@ namespace POE
             }
             return false;
         }
-        public virtual bool CheckRange(/*CharacterTarget*/)
+        public virtual bool CheckRange(CharTarg)
         {
             int AtkRange = 1 + weapon;
-            if (DistanceTo() == AtkRange)
+            if (DistanceTo(Target) == AtkRange)
             {
                 return true;
             }
             return false;
         }
-        private int DistanceTo(/*Target*/)
+        private int DistanceTo(target)
         {
-           /*Target*/ - Char
+            Distance = Math.Sqrt((CharTarg.X - CharDis.X) ^ 2 + (CharTarg.Y - CharDis.Y) ^ 2);
         }
 
     }
