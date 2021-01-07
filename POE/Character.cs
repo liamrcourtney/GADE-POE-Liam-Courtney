@@ -5,7 +5,7 @@ using System.Text;
 
 namespace POE
 {
-    class Character:Tile
+    abstract class Character:Tile
     {
         public int Hp;
         public int MaxHp;
@@ -13,8 +13,6 @@ namespace POE
         public int weapon;
         public int CharDistance;
         public int Target;
-        public Tile CharTarg = new Tile();
-        public Character CharDis = new Character();
         public double Distance;
         public string Symbol;
 
@@ -37,19 +35,19 @@ namespace POE
             X = 0;
             Y = 0;
             Symbol = "";
-            Tile t = new Tile(); 
+            
         }
-        public Character(string symbol)
+        public Character(string symbol,int x, int y)
         {
-            Tile t = new Tile(X, Y);
+            X = x;
+            Y = y;
             Symbol = symbol;
 
         }
 
-        public virtual void Attack(CharTarg)
+        public virtual void Attack(Character Target)
         {
-             
-            Hp = Hp-Dmg;
+             Hp = Hp-Dmg;
         }
         
         public bool IsDead()
@@ -60,51 +58,51 @@ namespace POE
             }
             return false;
         }
-        public virtual bool CheckRange(int CharTarg)
+        public virtual bool CheckRange(Character Target)
         {
 
             int AtkRange = weapon + 1;
-            AtkRange = CharTarg;
+            AtkRange = Target;
             
-            if (DistanceTo(Target) == AtkRange)
+            if (DistanceTo(target) == AtkRange)
             {
                 return true;
             }
             return false;
 
         }
-        private int DistanceTo(int Targ)
+        private int DistanceTo(int target)
         {
-            Distance = Math.Sqrt((CharTarg.X - CharDis.X) ^ 2 + (CharTarg.Y - CharDis.Y) ^ 2);
-            Distance = Targ;
+            Distance = Math.Sqrt((X - X) ^ 2 + (Y - Y) ^ 2);
+            Distance = target;
             
         }
         public void Move(Movement Move)
         {
             if (Move == Movement.NoMovement)
             {
-                CharDis.X = CharDis.X + 0;
-                CharDis.Y = CharDis.Y + 0;
+                X =X + 0;
+                Y =Y + 0;
             }
             if (Move == Movement.Up)
             {
-                CharDis.X = CharDis.X + 0;
-                CharDis.Y = CharDis.Y + 1;
+                X = X + 0;
+                Y = Y + 1;
             }
             if (Move == Movement.Down)
             {
-                CharDis.X = CharDis.X + 0;
-                CharDis.Y = CharDis.Y - 1;
+                X = X + 0;
+                Y = Y - 1;
             }
             if (Move == Movement.Left)
             {
-                CharDis.X = CharDis.X + 1;
-                CharDis.Y = CharDis.Y + 0;
+                X = X + 1;
+                Y = Y + 0;
             }
             if (Move == Movement.Right)
             {
-                CharDis.X = CharDis.X - 1;
-                CharDis.Y = CharDis.Y + 0;
+                X = X - 1;
+                Y = Y + 0;
             }
         }
 
@@ -112,6 +110,7 @@ namespace POE
         {
 
         }
+        
         public abstract override string ToString();
 
 

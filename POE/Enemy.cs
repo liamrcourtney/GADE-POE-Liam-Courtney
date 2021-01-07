@@ -4,14 +4,28 @@ using System.Text;
 
 namespace POE
 {
-    class Enemy:Character
+    abstract class Enemy:Character
     {
         Random Object;
+        
 
         public Enemy()
         {
-          Tile E = new Tile(X, Y);
-
+          
+            Symbol = "";
+            Dmg = 0;
+            MaxHp = 0;
+        }
+        public Enemy(string symbol,int x,int y, int dmg)
+        {
+            X = x;
+            Y = y;
+            Symbol = symbol;
+            Dmg = dmg;
+        }
+        public override string ToString()
+        {
+            throw new NotImplementedException();
         }
     }
 }
