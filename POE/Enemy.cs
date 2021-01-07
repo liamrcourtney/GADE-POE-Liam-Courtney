@@ -6,18 +6,19 @@ namespace POE
 {
     abstract class Enemy:Character
     {
-        Random Object;
-        
+        protected Random Obj= new Random();
+
 
         public Enemy()
         {
-          
+
             Symbol = "";
             Dmg = 0;
             MaxHp = 0;
         }
         public Enemy(string symbol,int x,int y, int dmg)
         {
+              
             X = x;
             Y = y;
             Symbol = symbol;

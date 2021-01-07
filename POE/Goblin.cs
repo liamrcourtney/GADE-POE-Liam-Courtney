@@ -6,17 +6,21 @@ namespace POE
 {
     class Goblin : Enemy
     {
-        public Goblin()
+        private TileType ClassType;
+       
+        public Goblin() 
         {
-
+            Symbol = "GOB";
+            ClassType = TileType.Enemy;
+            MaxHp = 10;
+            Dmg = 1;
+            X = 0;
+            Y = 0;
         }
-        public Goblin()
-        {
-
-        }
-        public override Movement ReturnMove(Movement move = Movement.NoMovement)
+        public override Movement ReturnMove(Movement move)
         {
             throw new NotImplementedException();
+
         }
     }
 }

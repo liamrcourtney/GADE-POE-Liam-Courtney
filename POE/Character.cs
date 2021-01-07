@@ -7,9 +7,9 @@ namespace POE
 {
     abstract class Character:Tile
     {
-        public int Hp;
-        public int MaxHp;
-        public int Dmg;
+        protected int Hp;
+        protected int MaxHp;
+        protected int Dmg;
         public int weapon;
         public int CharDistance;
         public int Target;
@@ -62,19 +62,19 @@ namespace POE
         {
 
             int AtkRange = weapon + 1;
-            AtkRange = Target;
-            
-            if (DistanceTo(target) == AtkRange)
+                        
+            if (DistanceTo(Target) == AtkRange)
             {
                 return true;
             }
             return false;
 
         }
-        private int DistanceTo(int target)
+        private int DistanceTo(Character Target) 
         {
             Distance = Math.Sqrt((X - X) ^ 2 + (Y - Y) ^ 2);
-            Distance = target;
+
+            Distance = Target;
             
         }
         public void Move(Movement Move)
@@ -113,7 +113,10 @@ namespace POE
         
         public abstract override string ToString();
 
-
+        public static implicit operator double(Character v)
+        {
+            throw new NotImplementedException();
+        }
     }
 
 }

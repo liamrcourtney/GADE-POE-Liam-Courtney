@@ -42,14 +42,16 @@ namespace POE
 
         public Obstacle()
         {
-            new Tile(X, Y);
+            X = 0;
+            Y = 0;
         }
     }
     class EmptyTile: Tile
     {
         public EmptyTile()
         {
-            new Tile(X, Y);
+            X = 0;
+            Y = 0;
         }
     }
 
