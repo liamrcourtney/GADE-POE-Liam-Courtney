@@ -4,7 +4,7 @@ using System.Text;
 
 namespace POE
 {
-    abstract class Enemy:Character
+    public abstract class Enemy:Character
     {
         protected Random Obj= new Random();
 

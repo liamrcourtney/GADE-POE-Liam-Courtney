@@ -4,7 +4,7 @@ using System.Text;
 
 namespace POE
 {
-    abstract class Tile
+    public abstract class Tile
     {
         public int Y;
         public int X;

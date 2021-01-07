@@ -4,7 +4,7 @@ using System.Text;
 
 namespace POE
 {
-    class Goblin : Enemy
+    public class Goblin : Enemy
     {
         private TileType ClassType;
        

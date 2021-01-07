@@ -5,7 +5,7 @@ using System.Text;
 
 namespace POE
 {
-    abstract class Character:Tile
+    public abstract class Character:Tile
     {
         protected int Hp;
         protected int MaxHp;
