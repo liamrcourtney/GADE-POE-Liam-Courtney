@@ -8,8 +8,8 @@ namespace POE
     {
         public Hero(): base()
         {
-            X = 3;
-            Y = 2;
+            X = 0;
+            Y = 0;
             Hp = 10;
             MaxHp = 10;
             Dmg = 2;

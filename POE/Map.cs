@@ -33,6 +33,21 @@ namespace POE
             width = Rand.Next(Minwidth, Maxwidth);
             height = Rand.Next(Minheight, Maxheight);
             Tile[,] TileMap = new Tile[width, height];
+
+            //Create()
+            //UpdateVision()
+        }
+        
+        public void UpdateVision()
+        {
+
+        }
+        private Tile Create(Tile.TileType type)
+        {
+            if (Rand.Next(0, 2) == (int)Tile.TileType.Hero)
+            {
+                
+            }
         }
     }
 

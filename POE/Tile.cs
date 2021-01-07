@@ -18,7 +18,19 @@ namespace POE
             Weapon
                
         }
-        TileType Type1;
+        public TileType Type1;
+
+        public TileType Type
+        {
+            get
+            {
+                return Type1;
+            }
+            set
+            {
+                Type1 = value;
+            }
+        }
         
         public Tile()
         {

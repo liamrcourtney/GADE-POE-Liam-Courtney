@@ -19,7 +19,7 @@ namespace POE
 
 
 
-        public Tile[] CharacterVision = new Tile[4] /*{ (X + 0, Y + 1), (X + 0, Y - 1), (X + 1, Y + 0), (X - 1, Y + 0) }*/;
+        public Tile[] CharacterVision;// = new Tile[4] { (X + 0, Y + 1), (X + 0, Y - 1), (X + 1, Y + 0), (X - 1, Y + 0) };
 
         //public static Vision()
         //{
@@ -33,6 +33,20 @@ namespace POE
             Left = 3,
             Right = 4
 
+        }
+
+        public Movement movement;
+
+        public Movement Moove
+        {
+            get
+            {
+                return movement;
+            }
+            set
+            {
+                movement = value;
+            }
         }
         public Character()
         {
