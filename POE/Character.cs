@@ -19,9 +19,12 @@ namespace POE
 
 
 
-        Tile[] CharacterVision = new Tile[4] { (X + 0, Y + 1), (X + 0, Y - 1), (X + 1, Y + 0), (X - 1, Y + 0) };
-        
+        public Tile[] CharacterVision = new Tile[4] /*{ (X + 0, Y + 1), (X + 0, Y - 1), (X + 1, Y + 0), (X - 1, Y + 0) }*/;
 
+        //public static Vision()
+        //{
+
+        //}
         public enum Movement
         {
             NoMovement = 0,

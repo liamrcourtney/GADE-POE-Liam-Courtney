@@ -22,7 +22,7 @@ namespace POE
         {
             //throw new NotImplementedException();
             int m = (int)move;
-            if()
+            
             switch (Obj.Next(0, 5))
             {
                 case 0 :

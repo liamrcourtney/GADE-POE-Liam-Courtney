@@ -26,7 +26,7 @@ namespace POE
         }
         public override string ToString()
         {
-            throw new NotImplementedException();
+            return Symbol+"at ["+X+","+Y+"("+Dmg+"DMG)";
         }
     }
 }
