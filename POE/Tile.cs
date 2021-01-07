@@ -6,8 +6,8 @@ namespace POE
 {
     public abstract class Tile
     {
-        public int Y;
-        public int X;
+        protected int Y;
+        protected int X;
         public string TileType1;
 
         public enum TileType

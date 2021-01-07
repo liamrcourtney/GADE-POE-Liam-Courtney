@@ -15,11 +15,12 @@ namespace POE
         public int Target;
         public double Distance;
         public string Symbol;
+        public double a = 1.0;
 
 
 
-        Tile[] CharacterVision;
-
+        Tile[] CharacterVision = new Tile[4] { (X + 0, Y + 1), (X + 0, Y - 1), (X + 1, Y + 0), (X - 1, Y + 0) };
+        
 
         public enum Movement
         {
@@ -72,17 +73,26 @@ namespace POE
         }
         private int DistanceTo(Character Target) 
         {
-            Distance = Math.Sqrt((X - X) ^ 2 + (Y - Y) ^ 2);
-
-            Distance = Target;
             
+            if(Distance >a)
+            {
+                return (int)(Distance = Math.Sqrt((X - X) ^ 2 + (Y - Y) ^ 2));
+            }
+            return (int)(Distance = Math.Sqrt((X - X) ^ 2 + (Y - Y) ^ 2));
+
+
+
         }
+
+        
         public void Move(Movement Move)
         {
+            
             if (Move == Movement.NoMovement)
             {
                 X =X + 0;
                 Y =Y + 0;
+
             }
             if (Move == Movement.Up)
             {
@@ -106,17 +116,12 @@ namespace POE
             }
         }
 
-        public abstract Movement ReturnMove(Movement move = 0)
-        {
+        public abstract Movement ReturnMove(Movement move = 0);
+     
 
-        }
-        
-        public abstract override string ToString();
+    public abstract override string ToString();
 
-        public static implicit operator double(Character v)
-        {
-            throw new NotImplementedException();
-        }
+       
     }
 
 }
