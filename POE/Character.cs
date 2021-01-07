@@ -17,19 +17,19 @@ namespace POE
         public Character CharDis = new Character();
         public double Distance;
         public string Symbol;
-        
 
-        
+
+
         Tile[] CharacterVision;
 
 
         public enum Movement
         {
-            NoMovement,
-            Up,
-            Down,
-            Left,
-            Right
+            NoMovement = 0,
+            Up = 1,
+            Down = 2,
+            Left = 3,
+            Right = 4
 
         }
         public Character()
@@ -46,7 +46,7 @@ namespace POE
 
         }
 
-        public virtual void Attack(CharTarget)
+        public virtual void Attack(CharTarg)
         {
              
             Hp = Hp-Dmg;
@@ -60,19 +60,61 @@ namespace POE
             }
             return false;
         }
-        public virtual bool CheckRange(CharTarg)
+        public virtual bool CheckRange(int CharTarg)
         {
-            int AtkRange = 1 + weapon;
+
+            int AtkRange = weapon + 1;
+            AtkRange = CharTarg;
+            
             if (DistanceTo(Target) == AtkRange)
             {
                 return true;
             }
             return false;
+
         }
-        private int DistanceTo(target)
+        private int DistanceTo(int Targ)
         {
             Distance = Math.Sqrt((CharTarg.X - CharDis.X) ^ 2 + (CharTarg.Y - CharDis.Y) ^ 2);
+            Distance = Targ;
+            
+        }
+        public void Move(Movement Move)
+        {
+            if (Move == Movement.NoMovement)
+            {
+                CharDis.X = CharDis.X + 0;
+                CharDis.Y = CharDis.Y + 0;
+            }
+            if (Move == Movement.Up)
+            {
+                CharDis.X = CharDis.X + 0;
+                CharDis.Y = CharDis.Y + 1;
+            }
+            if (Move == Movement.Down)
+            {
+                CharDis.X = CharDis.X + 0;
+                CharDis.Y = CharDis.Y - 1;
+            }
+            if (Move == Movement.Left)
+            {
+                CharDis.X = CharDis.X + 1;
+                CharDis.Y = CharDis.Y + 0;
+            }
+            if (Move == Movement.Right)
+            {
+                CharDis.X = CharDis.X - 1;
+                CharDis.Y = CharDis.Y + 0;
+            }
         }
 
+        public abstract Movement ReturnMove(Movement move = 0)
+        {
+
+        }
+        public abstract override string ToString();
+
+
     }
+
 }
