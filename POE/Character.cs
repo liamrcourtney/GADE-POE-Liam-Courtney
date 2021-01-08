@@ -16,15 +16,15 @@ namespace POE
         public double Distance;
         public string Symbol;
         public double a = 1.0;
+        protected int V = 0;
 
 
 
-        public Tile[] CharacterVision;// = new Tile[4] { (X + 0, Y + 1), (X + 0, Y - 1), (X + 1, Y + 0), (X - 1, Y + 0) };
 
-        //public static Vision()
-        //{
 
-        //}
+        public Tile[] CharacterVision = { };
+
+        
         public enum Movement
         {
             NoMovement = 0,
@@ -105,31 +105,27 @@ namespace POE
         public void Move(Movement Move)
         {
             
-            if (Move == Movement.NoMovement)
+            if (Moove == Movement.NoMovement)
             {
                 X =X + 0;
                 Y =Y + 0;
 
             }
-            if (Move == Movement.Up)
+            if (Moove == Movement.Up)
             {
-                X = X + 0;
                 Y = Y + 1;
             }
-            if (Move == Movement.Down)
+            if (Moove == Movement.Down)
             {
-                X = X + 0;
                 Y = Y - 1;
             }
-            if (Move == Movement.Left)
+            if (Moove == Movement.Left)
             {
                 X = X + 1;
-                Y = Y + 0;
             }
-            if (Move == Movement.Right)
+            if (Moove == Movement.Right)
             {
                 X = X - 1;
-                Y = Y + 0;
             }
         }
 

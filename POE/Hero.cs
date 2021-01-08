@@ -6,6 +6,7 @@ namespace POE
 {
     class Hero: Character
     {
+
         public Hero(): base()
         {
             X = 0;
@@ -14,11 +15,12 @@ namespace POE
             MaxHp = 10;
             Dmg = 2;
 
-
         }
+
         public override Movement ReturnMove(Movement move)
         {
             throw new NotImplementedException();
+           // if()
         }
         public override string ToString()
         {

@@ -20,18 +20,18 @@ namespace POE
         public override Movement ReturnMove(Movement move)
         {
             //throw new NotImplementedException();
-            
-            
+
+
             switch (Obj.Next(0, 5))
             {
-                case 0 :
+                case 0:
                     X = X + 0;
                     Y = Y + 0;
                     break;
                 case 1:
                     X = X + 0;
                     Y = Y + 1;
-                    
+
                     break;
                 case 2:
                     X = X + 0;

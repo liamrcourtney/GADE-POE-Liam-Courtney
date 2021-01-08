@@ -9,6 +9,7 @@ namespace POE
         protected int Y;
         protected int X;
         public string TileType1;
+      
 
         public enum TileType
         {
@@ -52,7 +53,7 @@ namespace POE
     class Obstacle : Tile
     {
 
-        public Obstacle()
+        public Obstacle() : base()
         {
             X = 0;
             Y = 0;
@@ -60,7 +61,7 @@ namespace POE
     }
     class EmptyTile: Tile
     {
-        public EmptyTile()
+        public EmptyTile() : base()
         {
             X = 0;
             Y = 0;
