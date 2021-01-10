@@ -7,10 +7,10 @@ namespace POE
     class Hero: Character
     {
 
-        public Hero(): base()
+        public Hero(int x,int y): base("H",0,0)
         {
-            X = 0;
-            Y = 0;
+            X = x;
+            Y = y;
             Hp = 10;
             MaxHp = 10;
             Dmg = 2;

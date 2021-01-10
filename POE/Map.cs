@@ -17,14 +17,8 @@ namespace POE
         public int Maxwidth;
         public int Minheight;
         public int Maxheight;
-        public int Type;
-        public Map()
-        {
-            Minwidth = 0;
-            Maxwidth = 10;
-            Minheight = 0;
-            Maxheight = 10;
-        }
+        
+       
         public Map(int minWidth, int maxWidth, int minHeight, int maxHeight)
         {
             Minwidth = minWidth;
@@ -36,8 +30,9 @@ namespace POE
             height = Rand.Next(Minheight, Maxheight);
             Tile[,] TileMap = new Tile[width, height];
 
-            //Create()
-            //UpdateVision()
+            Create(Tile.TileType.Hero);
+            Create(Tile.TileType.Enemy);
+            UpdateVision();
         }
         
         public void UpdateVision()
@@ -48,16 +43,25 @@ namespace POE
         {
             if (type == Tile.TileType.Hero)
             {
-               return player = new Hero();
+               return player = new Hero(Rand.Next(width),Rand.Next(height));
                 
             }
 
             if (type == Tile.TileType.Enemy)
             {
-                enemies[E] = new Goblin();
+                enemies[E] = new Goblin(Rand.Next(width), Rand.Next(height));
                 E++;
+                
             }
-            return Tile.TileType.Gold;
+            return player;
+            //if (type == Tile.TileType.Gold)
+            //{
+            //    return 
+            //}
+            //if (type == Tile.TileType.Weapon)
+            //{
+            //    return 
+            //}
 
         }
     }

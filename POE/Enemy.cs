@@ -9,14 +9,7 @@ namespace POE
         protected Random Obj= new Random();
 
 
-        public Enemy()
-        {
-
-            Symbol = "";
-            Dmg = 0;
-            MaxHp = 0;
-        }
-        public Enemy(string symbol,int x,int y, int dmg)
+        public Enemy(string symbol,int x,int y, int dmg) : base("", 0, 0)
         {
               
             X = x;

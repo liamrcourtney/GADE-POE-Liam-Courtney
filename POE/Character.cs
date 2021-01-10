@@ -48,14 +48,8 @@ namespace POE
                 movement = value;
             }
         }
-        public Character()
-        {
-            X = 0;
-            Y = 0;
-            Symbol = "";
-            
-        }
-        public Character(string symbol,int x, int y)
+       
+        public Character(string symbol,int x, int y):base(0,0)
         {
             X = x;
             Y = y;

@@ -6,8 +6,8 @@ namespace POE
 {
     public abstract class Tile
     {
-        protected int Y;
-        protected int X;
+        protected int Y { get; set; }
+        protected int X { get; set; }
         public string TileType1;
       
 
@@ -15,8 +15,8 @@ namespace POE
         {
             Hero,
             Enemy,
-            Gold, 
-            Weapon
+          //  Gold, 
+           // Weapon
                
         }
         public TileType Type1;
@@ -33,13 +33,7 @@ namespace POE
             }
         }
         
-        public Tile()
-        {
-            TileType1 = Type1.ToString();
-            X=0;
-            Y=0;
-
-        }    
+         
         public Tile( int x, int y)
         {
 
@@ -53,7 +47,7 @@ namespace POE
     class Obstacle : Tile
     {
 
-        public Obstacle() : base()
+        public Obstacle() : base(0,0)
         {
             X = 0;
             Y = 0;
@@ -61,7 +55,7 @@ namespace POE
     }
     class EmptyTile: Tile
     {
-        public EmptyTile() : base()
+        public EmptyTile() : base(0,0)
         {
             X = 0;
             Y = 0;

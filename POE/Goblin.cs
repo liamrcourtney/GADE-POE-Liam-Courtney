@@ -9,13 +9,13 @@ namespace POE
        
         
        
-        public Goblin() 
+        public Goblin(int x,int y):base("G",0,0,1) 
         {
-            Symbol = "GOB";
+            Symbol = "G";
             MaxHp = 10;
             Dmg = 1;
-            X = 0;
-            Y = 0;
+            X = x;
+            Y = y;
         }
         public override Movement ReturnMove(Movement move)
         {
