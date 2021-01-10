@@ -19,7 +19,15 @@ namespace POE
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+            if (button1.Click += Button1_Click;)
+            {
+
+            }
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
     }
 }
